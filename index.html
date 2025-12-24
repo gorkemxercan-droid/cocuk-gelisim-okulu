@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Ana Sayfa | Mutlu Adımlar Baby School</title>
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎈</text></svg>">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Nunito:wght@300;400;600;700;800&display=swap&subset=latin,latin-ext"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#0EA5E9", // Bright Blue
+                        secondary: "#FACC15", // Sunny Yellow
+                        tertiary: "#F43F5E", // Vibrant Pink/Red
+                        quaternary: "#8B5CF6", // Purple
+                        quinary: "#10B981", // Emerald Green
+                        "background-light": "#FFFBEB", // Warm cream/yellow tint
+                        "background-dark": "#1e1b4b", // Dark indigo
+                        "card-light": "#FFFFFF",
+                        "text-light": "#334155",
+                        "text-dark": "#E2E8F0",
+                        "pastel-blue": "#BAE6FD",
+                        "pastel-pink": "#FECDD3",
+                        "pastel-yellow": "#FEF08A",
+                        "pastel-green": "#A7F3D0",
+                        "pastel-purple": "#DDD6FE",
+                    },
+                    fontFamily: {
+                        display: ['"Baloo 2"', 'cursive'],
+                        body: ['Nunito', 'sans-serif'],
+                    },
+                    borderRadius: {
+                        DEFAULT: "1rem",
+                        'xl': '1.5rem',
+                        '2xl': '2rem',
+                        '3xl': '3rem',
+                        'blob': '60% 40% 30% 70% / 60% 30% 70% 40%',
+                    },
+                    animation: {
+                        'wiggle': 'wiggle 3s ease-in-out infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                        'float-delayed': 'float 6s ease-in-out 3s infinite',
+                        'spin-slow': 'spin 20s linear infinite',
+                        'bounce-slight': 'bounceSlight 2s infinite',
+                        'fade-in-up': 'fadeInUp 1s ease-out forwards',
+                        'pop-in': 'popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards',
+                        'scale-in': 'scaleIn 0.5s ease-out forwards',
+                        'slide-in-right': 'slideInRight 0.8s ease-out forwards',
+                        'slide-in-left': 'slideInLeft 0.8s ease-out forwards',
+                    },
+                    keyframes: {
+                        wiggle: {
+                            '0%, 100%': { transform: 'rotate(-3deg)' },
+                            '50%': { transform: 'rotate(3deg)' },
+                        },
+                        float: {
+                            '0%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-15px)' },
+                            '100%': { transform: 'translateY(0px)' },
+                        },
+                        bounceSlight: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-5px)' },
+                        },
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        popIn: {
+                            '0%': { opacity: '0', transform: 'scale(0.5)' },
+                            '100%': { opacity: '1', transform: 'scale(1)' },
+                        },
+                        scaleIn: {
+                            '0%': { opacity: '0', transform: 'scale(0.9)' },
+                            '100%': { opacity: '1', transform: 'scale(1)' },
+                        },
+                        slideInRight: {
+                            '0%': { opacity: '0', transform: 'translateX(50px)' },
+                            '100%': { opacity: '1', transform: 'translateX(0)' },
+                        },
+                        slideInLeft: {
+                            '0%': { opacity: '0', transform: 'translateX(-50px)' },
+                            '100%': { opacity: '1', transform: 'translateX(0)' },
+                        }
+                    }
+                },
+            },
+        };
+    </script>
+    <style>
+        .bg-pattern-doodle {
+            background-color: #FFFBEB;
+            background-image: radial-gradient(#FACC15 15%, transparent 16%), radial-gradient(#F43F5E 15%, transparent 16%);
+            background-size: 60px 60px;
+            background-position: 0 0, 30px 30px;
+            opacity: 0.6;
+        }
+
+        .dark .bg-pattern-doodle {
+            background-color: #1e1b4b;
+            opacity: 0.1;
+        }
+
+        .wave-bottom {
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+        }
+
+        .wave-bottom svg {
+            position: relative;
+            display: block;
+            width: calc(130% + 1.3px);
+            height: 60px;
+        }
+
+        .card-shadow-pop {
+            box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.1);
+            transition: all 0.2s ease;
+        }
+
+        .card-shadow-pop:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.15);
+        }
+
+        .text-stroke-sm {
+            -webkit-text-stroke: 1px #fff;
+        }
+
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #FFFBEB;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #F43F5E;
+            border-radius: 6px;
+            border: 3px solid #FFFBEB;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark font-body text-text-light dark:text-text-dark transition-colors duration-300 overflow-x-hidden">
+    <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+        <div class="bg-pattern-doodle absolute inset-0"></div>
+        <div
+            class="absolute top-20 left-10 w-32 h-32 bg-pastel-yellow rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-float">
+        </div>
+        <div
+            class="absolute top-40 right-10 w-40 h-40 bg-pastel-pink rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-float-delayed">
+        </div>
+        <div
+            class="absolute bottom-20 left-20 w-48 h-48 bg-pastel-blue rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-float">
+        </div>
+    </div>
+    <header class="fixed w-full z-50 top-0 left-0 transition-all duration-300">
+        <div class="h-2 w-full bg-gradient-to-r from-tertiary via-secondary to-primary"></div>
+        <div
+            class="bg-white/95 dark:bg-gray-900/95 backdrop-blur-md shadow-sm border-b-4 border-pastel-blue/30 rounded-b-[2rem] mx-2 lg:mx-4 mt-1">
+            <div class="container mx-auto px-4 py-3">
+                <div class="flex flex-col lg:flex-row justify-between items-center gap-4">
+                    <div class="flex items-center space-x-2">
+                        <div
+                            class="text-3xl font-display font-bold flex flex-col items-center leading-none group cursor-pointer">
+                            <span class="text-tertiary text-sm group-hover:tracking-widest transition-all">Mutlu
+                                Adımlar</span>
+                            <span
+                                class="text-transparent bg-clip-text bg-gradient-to-r from-tertiary via-secondary to-primary drop-shadow-sm">Baby
+                                School</span>
+                        </div>
+                    </div>
+                    <!-- Mobile Menu Button -->
+                    <button id="mobile-menu-btn"
+                        class="lg:hidden p-2 rounded-full bg-pastel-yellow text-gray-600 hover:scale-105 transition-transform shadow-sm">
+                        <span class="material-icons-round text-3xl">menu</span>
+                    </button>
+
+                    <!-- Mobile Menu Container -->
+                    <div id="mobile-menu"
+                        class="hidden absolute top-full left-0 w-full bg-white dark:bg-gray-900 border-b-4 border-pastel-blue/30 shadow-xl rounded-b-[2rem] p-4 flex-col gap-2 z-50">
+                        <a class="block px-4 py-3 rounded-xl hover:bg-pastel-yellow hover:text-orange-600 transition-colors font-bold text-gray-700 dark:text-gray-200 flex items-center gap-2"
+                            href="index.html">
+                            <span class="material-icons-round text-secondary">home</span> Ana Sayfa
+                        </a>
+                        <a class="block px-4 py-3 rounded-xl hover:bg-pastel-pink hover:text-pink-600 transition-colors font-bold text-gray-700 dark:text-gray-200 flex items-center gap-2"
+                            href="ekibimiz.html">
+                            <span class="material-icons-round text-tertiary">groups</span> Ekibimiz
+                        </a>
+                        <a class="block px-4 py-3 rounded-xl hover:bg-pastel-blue hover:text-blue-600 transition-colors font-bold text-gray-700 dark:text-gray-200 flex items-center gap-2"
+                            href="etkinlikler.html">
+                            <span class="material-icons-round text-primary">school</span> Etkinlikler
+                        </a>
+                        <a class="block px-4 py-3 rounded-xl hover:bg-pastel-green hover:text-green-600 transition-colors font-bold text-gray-700 dark:text-gray-200 flex items-center gap-2"
+                            href="galeri.html">
+                            <span class="material-icons-round text-quinary">collections</span> Galeri
+                        </a>
+                        <a class="block px-4 py-3 rounded-xl bg-gradient-to-r from-tertiary to-orange-400 text-white shadow-lg flex items-center gap-2 justify-center"
+                            href="iletisim.html">
+                            <span>İletişim</span>
+                            <span
+                                class="material-icons-round text-sm bg-white/20 rounded-full p-0.5">arrow_forward</span>
+                        </a>
+                    </div>
+                    <script>
+                        const btn = document.getElementById('mobile-menu-btn');
+                        const menu = document.getElementById('mobile-menu');
+                        btn.addEventListener('click', () => {
+                            menu.classList.toggle('hidden');
+                            menu.classList.toggle('flex');
+                        });
+                    </script>
+                    <nav
+                        class="hidden lg:flex items-center space-x-2 text-sm font-bold text-gray-600 dark:text-gray-300 bg-white dark:bg-gray-800 px-6 py-2 rounded-full shadow-inner border border-gray-100 dark:border-gray-700">
+                        <a class="px-3 py-2 rounded-xl hover:bg-pastel-yellow hover:text-orange-600 transition-colors flex items-center gap-1 group"
+                            href="index.html">
+                            <span
+                                class="material-icons-round text-lg group-hover:animate-bounce-slight text-secondary">home</span>
+                            Ana Sayfa
+                        </a>
+                        <a class="px-3 py-2 rounded-xl hover:bg-pastel-pink hover:text-pink-600 transition-colors flex items-center gap-1 group"
+                            href="ekibimiz.html">
+                            <span
+                                class="material-icons-round text-lg group-hover:animate-bounce-slight text-tertiary">groups</span>
+                            Ekibimiz
+                        </a>
+                        <a class="px-3 py-2 rounded-xl hover:bg-pastel-blue hover:text-blue-600 transition-colors flex items-center gap-1 group"
+                            href="etkinlikler.html">
+                            <span
+                                class="material-icons-round text-lg group-hover:animate-bounce-slight text-primary">school</span>
+                            Etkinlikler
+                        </a>
+                        <a class="px-3 py-2 rounded-xl hover:bg-pastel-green hover:text-green-600 transition-colors flex items-center gap-1 group"
+                            href="galeri.html">
+                            <span
+                                class="material-icons-round text-lg group-hover:animate-bounce-slight text-quinary">collections</span>
+                            Galeri
+                        </a>
+                        <a class="ml-2 bg-gradient-to-r from-tertiary to-orange-400 text-white px-5 py-2 rounded-xl hover:scale-105 transition shadow-lg flex items-center gap-2 transform active:scale-95"
+                            href="iletisim.html">
+                            <span>İletişim</span>
+                            <span
+                                class="material-icons-round text-sm bg-white/20 rounded-full p-0.5">arrow_forward</span>
+                        </a>
+                    </nav>
+
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="pt-32 pb-20 overflow-hidden relative">
+        <section class="relative container mx-auto px-4 z-10 mb-20">
+            <svg class="absolute -top-10 left-0 w-24 h-24 text-secondary animate-spin-slow opacity-80"
+                fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12,2L14.5,8L21,9L16,14L17.5,20L12,17L6.5,20L8,14L3,9L9.5,8L12,2Z"></path>
+            </svg>
+            <svg class="absolute top-10 right-10 w-16 h-16 text-primary animate-bounce opacity-60" fill="currentColor"
+                viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10"></circle>
+            </svg>
+            <svg class="absolute bottom-0 left-1/2 w-20 h-20 text-tertiary animate-wiggle opacity-50"
+                fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12,2L2,22H22L12,2Z"></path>
+            </svg>
+            <div
+                class="bg-gradient-to-br from-primary via-blue-400 to-quaternary rounded-[3rem] p-6 lg:p-12 shadow-2xl relative overflow-hidden">
+                <div
+                    class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]">
+                </div>
+                <img alt="cloud decoration"
+                    class="absolute top-10 left-10 w-24 h-24 object-contain opacity-60 animate-float z-0"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8vxMiGBPejnMuaQvdj8kB8q6nu4ZwLfjw8kby3Lk1V-WUYfJOz7xXVE0Ccc5bEieqwphkI8EmIIMvibPJn8U31dT8Rn9twXWss0WnhnExrFf1QroXa-vDa_9GeXTZFiBkQ1TsqSmEN0PCq4m0rG3cX1PDEJYtNeCUSUiacD30cmVCHHZ4wz_W9ox0-i3e2FJUQ4ltp8_CR7iHZI4fzneBmTw94tVgZmKJnE6u-gZCRb8KGMxYtItyXfZ-_-roSQPLLC5fRxyiiSw"
+                    style="animation-delay: 0s;" />
+                <img alt="cloud decoration"
+                    class="absolute top-20 right-20 w-32 h-32 object-contain opacity-60 animate-float-delayed z-0"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-vT9xv17qk1Z4Zypk8hRXIHn6fcMWARc5emYephiim15N6pAv0oa2ZZWhEQmvBjZKLDVpb5Z6qvqy9ycOvWnAa1oFua4Cjqez0-pX9EppDcCQnf4QlEbGUpJK3LOQl1eyNx-B7XR8-aBAKUCi4-WEBPMCAucQq3Cxnxud3rQvLDsWW3HlSFUpVDdu7G_c5QNQFv-4pHqJppIJWK2gWHnm2Ez3IqMu8kIu-LBd973Dki-v5MVfnZBGpMlRn96fvLV2YgSij00Ri4c" />
+                <div class="flex flex-col lg:flex-row items-center gap-8 lg:gap-16 relative z-10">
+                    <div class="lg:w-1/2 relative group animate-scale-in">
+                        <div
+                            class="absolute inset-0 bg-secondary rounded-[2.5rem] transform rotate-3 scale-105 opacity-80 group-hover:rotate-6 transition duration-500">
+                        </div>
+                        <div
+                            class="absolute inset-0 bg-tertiary rounded-[2.5rem] transform -rotate-2 scale-105 opacity-80 group-hover:-rotate-4 transition duration-500">
+                        </div>
+                        <div
+                            class="relative bg-white p-3 rounded-[2rem] shadow-xl transform transition duration-500 border-4 border-white/50">
+                            <img alt="Mutlu çocuklar oyun oynarken"
+                                class="rounded-[1.5rem] w-full h-[350px] lg:h-[450px] object-cover"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCM2SuAFcFSPrXaPc4wckVOxR7HxxSyJX04jPGSeSFaEu36K1Ri4sAgovOyZwZw9I1a8-cl4164VVihy0YIuySY9tf0U1_riDH1ulk9Wr-MKFQDUvlfSsBkVQRaaqU33003R9ApySCEFUtPsPodGxWTR0bEtsM5k67h1UOCn68KxQ3xUYBI8L6j7IMs8ZLApokP6NzLDcdsx8ux3kr3Ycf6mU7Sv_76JpGpwa-qZgHAOVRGwkBplIYBMxJvolt4zCKFEwcBKvqiXGU" />
+                        </div>
+                        <img alt="Koala Maskot"
+                            class="absolute -bottom-8 -left-8 w-28 h-28 lg:w-40 lg:h-40 animate-wiggle drop-shadow-lg"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBl5ORFKyg9VLqQM_pHAxGycQV09nnRknMWBKNPVkvU1kPptVzjVY776_yg9ZtBTX-SFTCWpy3spSLePTj8DY4NiVMDLNFFFVXPcamHLNk-Y7B0f50N97xyQOVQzEH4lXJsL4SalW1VP08ERWAto_Hc4rtAM4wdZoiWsPxgZdKBdBm8D5CepF8oaFp8qv4KZy52kysKaEEfmVlngTj_et0dEtfJwoeglHdZzDei-VsNsVlES7tg5RM5KZ4w9aVQEjZPozue0jRsDyw" />
+                    </div>
+                    <div class="lg:w-1/2 text-white">
+                        <div
+                            class="inline-block px-4 py-1 rounded-full bg-white/20 backdrop-blur-sm text-sm font-bold mb-4 border border-white/30">
+                            ✨ 2005'ten beri güvenle
+                        </div>
+                        <h1
+                            class="text-4xl lg:text-6xl font-display font-bold mb-6 drop-shadow-md leading-tight animate-fade-in-up">
+                            Mutlu Yarınlar <br />
+                            <span
+                                class="text-secondary inline-block transform -rotate-2 bg-white/10 px-2 rounded-lg mt-1">Burada
+                                Başlar!</span>
+                        </h1>
+                        <div class="bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20 shadow-inner">
+                            <div class="space-y-4 text-sm lg:text-base leading-relaxed text-white/95 font-medium">
+                                <p>Mutlu Adımlar Eğitim ve Gelişim Akademisi, 11 Mayıs 2005’te ailelere,
+                                    çocuklara, gençlere ve şirketlere çeşitli hizmetler üretmek üzere kuruldu.</p>
+                                <p>"Küçük Şeyler Anaokulu" markası ile başlattığımız yolculuğumuz, bugün "Mutlu Adımlar
+                                    –
+                                    Baby School" ile 0-3 yaş grubundaki miniklerimiz için devam ediyor.</p>
+                                <p class="bg-white/20 p-3 rounded-xl inline-block w-full text-center font-bold">
+                                    🚀 Keşif, Oyun ve Sevgi dolu bir dünyaya hoş geldiniz!
+                                </p>
+                            </div>
+                            <div class="flex items-center gap-4 mt-6 pt-4 border-t border-white/20">
+                                <div class="flex -space-x-3">
+                                    <div
+                                        class="w-10 h-10 rounded-full bg-secondary border-2 border-white flex items-center justify-center text-xs font-bold text-orange-900">
+                                        MA</div>
+                                    <div
+                                        class="w-10 h-10 rounded-full bg-tertiary border-2 border-white flex items-center justify-center text-xs font-bold text-white">
+                                        BS</div>
+                                </div>
+                                <div>
+                                    <h4 class="font-display font-bold text-sm">Kurucu Ortaklar</h4>
+                                    <span class="text-xs text-white/80 block">Mutlu Adımlar Yönetimi</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="absolute -bottom-16 right-4 lg:right-20 z-20">
+                <img alt="Hot air balloon"
+                    class="w-24 lg:w-32 h-auto animate-float mix-blend-normal drop-shadow-xl hover:scale-110 transition duration-300 cursor-pointer"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXQbj1bomI1jaVYrZ0dH9vwjE_k5gLGBztO3NWiMD0i2qy7ChCSEEcf0JEtHQtutlfrfqS8jdsAqrxnNEceUzXocxzhyJiGaO6UOaxJUiv6dKep8p0vGutbptfM1rY8B6Z_IWccNdVxMh7TCLERn6IAJZPhyl8-vPJzox2s6TtMrn9E--Po7oslIAqzkixnyXO1nHrktwxeV0ToKCMm7pyrdED1vvajSnUKNjKqKy5hLQXCXTn8vYZw4fy0lNtz0k8yhoquHqWTUU"
+                    style="border-radius: 50%; animation-delay: 1s;" />
+            </div>
+        </section>
+        <section class="py-10 relative">
+            <div class="container mx-auto px-4">
+                <div class="grid md:grid-cols-2 gap-8 lg:gap-12">
+                    <div
+                        class="bg-white dark:bg-gray-800 rounded-3xl p-8 lg:p-10 card-shadow-pop border-4 border-pastel-purple group relative overflow-hidden">
+                        <div
+                            class="absolute -right-10 -top-10 w-40 h-40 bg-pastel-purple rounded-full opacity-50 group-hover:scale-150 transition-transform duration-700">
+                        </div>
+                        <div class="relative z-10">
+                            <div
+                                class="w-16 h-16 bg-quaternary text-white rounded-2xl flex items-center justify-center mb-6 shadow-lg transform group-hover:rotate-12 transition">
+                                <span class="material-icons-round text-4xl">visibility</span>
+                            </div>
+                            <h2 class="text-3xl font-display font-bold mb-4 text-quaternary">Vizyonumuz</h2>
+                            <p class="max-w-2xl mx-auto text-lg text-gray-800 dark:text-gray-200 font-medium animate-fade-in-up bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm py-4 px-6 rounded-2xl shadow-sm border border-white/40 dark:border-gray-700/40"
+                                style="animation-delay: 200ms;">Hayatın ilk
+                                yıllarında güçlü bir temel oluşturarak, her çocuğun gelişim yolculuğunda ilham veren ve
+                                büyümelerine rehberlik eden renkli bir dünya olmak.</p>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-white dark:bg-gray-800 rounded-3xl p-8 lg:p-10 card-shadow-pop border-4 border-pastel-green group relative overflow-hidden">
+                        <div
+                            class="absolute -right-10 -bottom-10 w-40 h-40 bg-pastel-green rounded-full opacity-50 group-hover:scale-150 transition-transform duration-700">
+                        </div>
+                        <div class="relative z-10">
+                            <div
+                                class="w-16 h-16 bg-quinary text-white rounded-2xl flex items-center justify-center mb-6 shadow-lg transform group-hover:rotate-12 transition">
+                                <span class="material-icons-round text-4xl">flag</span>
+                            </div>
+                            <h2 class="text-3xl font-display font-bold mb-4 text-quinary">Misyonumuz</h2>
+                            <p class="leading-relaxed text-gray-700 dark:text-gray-300 font-medium">0-3 yaş arası
+                                çocukların bireysel ihtiyaçlarına uygun, bilimsel temellere dayalı, oyun ve keşif odaklı
+                                yaklaşımlarla gelişimlerini bir sanat eseri gibi işlemek.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="py-16 relative">
+            <div
+                class="absolute top-20 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/confetti.png')] opacity-40 pointer-events-none">
+            </div>
+            <div class="container mx-auto px-4 relative z-10">
+                <div class="text-center mb-16 max-w-3xl mx-auto">
+                    <span
+                        class="text-tertiary font-display font-bold text-lg uppercase tracking-wider mb-2 block animate-pulse">Değerlerimiz</span>
+                    <h2 class="text-4xl lg:text-5xl font-display font-bold text-gray-800 dark:text-white mb-6">
+                        Bizim <span
+                            class="text-primary underline decoration-wavy decoration-secondary decoration-4">Rengarenk</span>
+                        Dünyamız
+                    </h2>
+                    <p class="text-gray-800 dark:text-gray-200 text-lg font-medium">Minik kalplerin sağlıklı, mutlu ve
+                        başarılı bir
+                        gelişim süreci geçirmeleri için benimsediğimiz temel taşlarımız.</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                    <div
+                        class="bg-white dark:bg-gray-800 p-8 rounded-[2rem] shadow-lg border-b-8 border-tertiary hover:-translate-y-2 transition-transform duration-300">
+                        <div
+                            class="w-14 h-14 bg-pastel-pink rounded-full flex items-center justify-center mb-4 text-tertiary shadow-inner">
+                            <span class="material-icons-round text-3xl">favorite</span>
+                        </div>
+                        <h3 class="text-xl font-display font-bold mb-3 text-tertiary">Sevgi ve Saygı</h3>
+                        <p class="text-sm text-gray-700 dark:text-gray-400 font-medium">Çocukların bireysel
+                            farklılıklarına sevgiyle
+                            yaklaşır, her birinin biricik dünyasına saygı duyarız.</p>
+                    </div>
+                    <div
+                        class="bg-white dark:bg-gray-800 p-8 rounded-[2rem] shadow-lg border-b-8 border-primary hover:-translate-y-2 transition-transform duration-300">
+                        <div
+                            class="w-14 h-14 bg-pastel-blue rounded-full flex items-center justify-center mb-4 text-primary shadow-inner">
+                            <span class="material-icons-round text-3xl">science</span>
+                        </div>
+                        <h3 class="text-xl font-display font-bold mb-3 text-primary">Bilimsel Yaklaşım</h3>
+                        <p class="text-sm text-gray-700 dark:text-gray-400 font-medium">Gelişim ve eğitim konularında en
+                            güncel,
+                            kanıtlanmış bilimsel yöntemleri oyunla birleştiririz.</p>
+                    </div>
+                    <div
+                        class="bg-white dark:bg-gray-800 p-8 rounded-[2rem] shadow-lg border-b-8 border-quinary hover:-translate-y-2 transition-transform duration-300">
+                        <div
+                            class="w-14 h-14 bg-pastel-green rounded-full flex items-center justify-center mb-4 text-quinary shadow-inner">
+                            <span class="material-icons-round text-3xl">verified_user</span>
+                        </div>
+                        <h3 class="text-xl font-display font-bold mb-3 text-quinary">Güvenli Ortam</h3>
+                        <p class="text-sm text-gray-700 dark:text-gray-400 font-medium">Çocukların öğrenme ve keşfetme
+                            yolculuklarında kendilerini evlerinde gibi güvende hissetmelerini sağlarız.</p>
+                    </div>
+                    <div
+                        class="bg-white dark:bg-gray-800 p-8 rounded-[2rem] shadow-lg border-b-8 border-secondary hover:-translate-y-2 transition-transform duration-300 lg:col-start-1">
+                        <div
+                            class="w-14 h-14 bg-pastel-yellow rounded-full flex items-center justify-center mb-4 text-yellow-600 shadow-inner">
+                            <span class="material-icons-round text-3xl">explore</span>
+                        </div>
+                        <h3 class="text-xl font-display font-bold mb-3 text-yellow-600">Oyun ve Keşif</h3>
+                        <p class="text-sm text-gray-700 dark:text-gray-400 font-medium">Oyun, en ciddi iştir! Merak ve
+                            hayal gücünü
+                            destekleyen özgür oyun alanları sunarız.</p>
+                    </div>
+                    <div class="hidden lg:flex items-center justify-center relative">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-secondary/40 to-tertiary/40 rounded-full filter blur-2xl animate-pulse">
+                        </div>
+                        <img alt="Abstract colorful balloons"
+                            class="w-64 h-64 object-cover rounded-full shadow-2xl animate-float border-8 border-white dark:border-gray-700"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFr4tLRqYLCZl70izA_LspZ7EcY24zIzv5qECedMXno04eduBsrlg4uVtgvmOLbQze-pbIBm_EnhtzGcYYoiBEsyhpOU0LTMv01sg-6YTkoYwasuGlwk-QJVSae6oFsmyId_Z9yDvV8HnUWvxHp8CErEXKZwOEReviQwPI0sFNsTHx7JDB0CsmfWOatcVENHtrHZobyvL_Z1kTIBtXf4FtARP3SXNFoU7Ai1qQDIyDs4kO5RT2B0EO-LWwSeA_wUMU68WPVH-NQ30" />
+                        <div class="absolute -top-4 -right-4 bg-white p-2 rounded-lg shadow-lg rotate-12">
+                            <span class="text-2xl">🎈</span>
+                        </div>
+                        <div class="absolute -bottom-4 -left-4 bg-white p-2 rounded-lg shadow-lg -rotate-12">
+                            <span class="text-2xl">🎨</span>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-white dark:bg-gray-800 p-8 rounded-[2rem] shadow-lg border-b-8 border-quaternary hover:-translate-y-2 transition-transform duration-300">
+                        <div
+                            class="w-14 h-14 bg-pastel-purple rounded-full flex items-center justify-center mb-4 text-quaternary shadow-inner">
+                            <span class="material-icons-round text-3xl">diversity_3</span>
+                        </div>
+                        <h3 class="text-xl font-display font-bold mb-3 text-quaternary">Aile İş Birliği</h3>
+                        <p class="text-sm text-gray-700 dark:text-gray-400 font-medium">Ailelerle güçlü bir bağ kurar,
+                            bu güzel
+                            yolculukta el ele yürürüz. Biz büyük bir aileyiz.</p>
+                    </div>
+                    <div
+                        class="bg-white dark:bg-gray-800 p-8 rounded-[2rem] shadow-lg border-b-8 border-quinary hover:-translate-y-2 transition-transform duration-300">
+                        <div
+                            class="w-14 h-14 bg-pastel-green rounded-full flex items-center justify-center mb-4 text-quinary shadow-inner">
+                            <span class="material-icons-round text-3xl">eco</span>
+                        </div>
+                        <h3 class="text-xl font-display font-bold mb-3 text-quinary">Doğa Sevgisi</h3>
+                        <p class="text-sm text-gray-700 dark:text-gray-400 font-medium">Küçük eller toprakla buluşsun!
+                            Doğayı seven,
+                            koruyan çevre dostu nesiller yetiştiririz.</p>
+                    </div>
+                    <div
+                        class="bg-white dark:bg-gray-800 p-8 rounded-[2rem] shadow-lg border-b-8 border-orange-400 hover:-translate-y-2 transition-transform duration-300 md:col-span-2 lg:col-span-1 lg:col-start-2">
+                        <div
+                            class="w-14 h-14 bg-orange-100 rounded-full flex items-center justify-center mb-4 text-orange-500 shadow-inner">
+                            <span class="material-icons-round text-3xl">psychology</span>
+                        </div>
+                        <h3 class="text-xl font-display font-bold mb-3 text-orange-500">Bütünsel Yaklaşım</h3>
+                        <p class="text-sm text-gray-700 dark:text-gray-400 font-medium">Çocuğun bilişsel, sosyal,
+                            duygusal ve
+                            fiziksel tüm gelişim alanlarını bir bütün olarak kucaklarız.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="bg-white dark:bg-gray-950 pt-32 pb-12 relative overflow-hidden mt-20">
+        <div class="absolute top-0 left-0 w-full overflow-hidden leading-none z-10">
+            <svg class="relative block w-full h-[100px] text-background-light dark:text-background-dark fill-current"
+                preserveAspectRatio="none" viewBox="0 0 1200 120">
+                <path
+                    d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z">
+                </path>
+            </svg>
+        </div>
+        <div class="absolute top-1/2 left-10 text-pastel-pink opacity-20 animate-spin-slow">
+            <span class="material-icons-round text-9xl">star</span>
+        </div>
+        <div class="absolute bottom-20 right-10 text-pastel-blue opacity-20 animate-bounce">
+            <span class="material-icons-round text-8xl">cloud</span>
+        </div>
+        <div class="container mx-auto px-4 relative z-20">
+            <div class="flex flex-col items-center justify-center mb-12">
+                <div class="text-center mb-10 group">
+                    <div
+                        class="inline-block p-6 bg-gradient-to-tr from-primary to-quaternary rounded-[2rem] shadow-xl mb-6 transform group-hover:rotate-6 transition duration-300">
+                        <span class="material-icons-round text-6xl text-white">child_care</span>
+                    </div>
+                    <h2 class="text-4xl font-display font-bold text-gray-800 dark:text-white mb-2">Mutlu Adımlar</h2>
+                    <div class="flex items-center justify-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-tertiary"></span>
+                        <p class="font-display text-2xl text-secondary">Baby School</p>
+                        <span class="w-2 h-2 rounded-full bg-tertiary"></span>
+                    </div>
+                    <p
+                        class="text-xs font-bold tracking-[0.2em] uppercase text-gray-400 mt-3 bg-gray-100 dark:bg-gray-800 px-4 py-1 rounded-full inline-block">
+                        Aile Çocuk Gelişim Atölyesi</p>
+                </div>
+                <div
+                    class="flex flex-wrap justify-center gap-4 lg:gap-8 mb-12 text-sm font-bold text-gray-500 dark:text-gray-400">
+                    <a class="hover:text-tertiary hover:scale-110 transition-all" href="#">Ana Sayfa</a>
+                    <span class="text-gray-300">•</span>
+                    <a class="hover:text-secondary hover:scale-110 transition-all" href="#">Neden Biz</a>
+                    <span class="text-gray-300">•</span>
+                    <a class="hover:text-primary hover:scale-110 transition-all" href="#">Kurumsal</a>
+                    <span class="text-gray-300">•</span>
+                    <a class="hover:text-quaternary hover:scale-110 transition-all" href="#">Eğitim Gruplarımız</a>
+                    <span class="text-gray-300">•</span>
+                    <a class="hover:text-quinary hover:scale-110 transition-all" href="#">Atölyelerimiz</a>
+                    <span class="text-gray-300">•</span>
+                    <a class="hover:text-orange-500 hover:scale-110 transition-all" href="#">Anne - Baba</a>
+                </div>
+                <div class="flex flex-col md:flex-row gap-6 text-center text-sm">
+                    <a class="group flex items-center gap-4 bg-white dark:bg-gray-900 px-6 py-4 rounded-2xl border-2 border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-md hover:border-tertiary transition-all"
+                        href="mailto:eposta@gmail.com">
+                        <div
+                            class="w-10 h-10 bg-tertiary/10 rounded-full flex items-center justify-center group-hover:bg-tertiary group-hover:text-white transition-colors text-tertiary">
+                            <span class="material-icons-round">email</span>
+                        </div>
+                        <div class="text-left">
+                            <div class="font-bold text-gray-800 dark:text-gray-200">Bize Yazın</div>
+                            <div class="text-gray-500">eposta@gmail.com</div>
+                        </div>
+                    </a>
+                    <a class="group flex items-center gap-4 bg-white dark:bg-gray-900 px-6 py-4 rounded-2xl border-2 border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-md hover:border-primary transition-all"
+                        href="#">
+                        <div
+                            class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors text-primary">
+                            <span class="material-icons-round">location_on</span>
+                        </div>
+                        <div class="text-left">
+                            <div class="font-bold text-gray-800 dark:text-gray-200">Ziyaret Edin</div>
+                            <div class="text-gray-500">Istanbul, Levent</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div
+                class="border-t border-gray-100 dark:border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+                <div class="mb-4 md:mb-0 flex items-center gap-2">
+                    <span>© 2024 Mutlu Adımlar.</span>
+                    <span class="hidden md:inline">Mutlu Çocuklar, Mutlu Yarınlar.</span>
+                </div>
+                <div class="flex gap-4">
+                    <a class="w-10 h-10 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all transform hover:-translate-y-1 shadow-sm"
+                        href="#">
+                        <span class="material-icons-round">facebook</span>
+                    </a>
+                    <a class="w-10 h-10 rounded-full bg-gray-50 text-gray-800 flex items-center justify-center hover:bg-black hover:text-white transition-all transform hover:-translate-y-1 shadow-sm"
+                        href="#">
+                        <span class="font-bold text-lg">𝕏</span>
+                    </a>
+                    <a class="w-10 h-10 rounded-full bg-pink-50 text-pink-600 flex items-center justify-center hover:bg-pink-600 hover:text-white transition-all transform hover:-translate-y-1 shadow-sm"
+                        href="#">
+                        <span class="material-icons-round">photo_camera</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-0 left-0 w-full h-2 bg-gradient-to-r from-primary via-secondary to-tertiary"></div>
+    </footer>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/905000000000" target="_blank"
+        class="fixed bottom-6 right-6 z-50 bg-green-500 text-white p-4 rounded-full shadow-2xl hover:scale-110 hover:rotate-6 transition-all duration-300 flex items-center justify-center group border-4 border-white">
+        <svg class="w-8 h-8 fill-current group-hover:animate-wiggle" xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 448 512">
+            <path
+                d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7 .9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" />
+        </svg>
+        <span
+            class="absolute right-full mr-3 bg-white text-gray-800 px-3 py-1 rounded-xl text-xs font-bold shadow-md opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+            Bize Ulaşın! 👋
+        </span>
+    </a>
+</body>
+
+</html>
